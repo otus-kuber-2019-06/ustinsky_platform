@@ -1,18 +1,78 @@
-apiVersion: networking.k8s.io/v1beta1
+---
+apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: dashboard-ing
-  namespace: kube-system
+  name: kubernetes-dashboard
+  namespace: kubernetes-dashboard
   annotations:
+    # kubernetes.io/ingress.class: nginx
+    # nginx.org/ssl-services: kubernetes-dashboard
+    # nginx.ingress.kubernetes.io/ssl-passthrough: "true"
+    # nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
     nginx.ingress.kubernetes.io/rewrite-target: /$2
+    # nginx.ingress.kubernetes.io/secure-backends: "true"
+    # nginx.org/ssl-backends: "kubernetes-dashboard"
+    # nginx.ingress.kubernetes.io/configuration-snippet: rewrite ^(/dashboard)$ $1/ permanent;
+    # nginx.ingress.kubernetes.io/configuration-snippet: rewrite /dashboard/(.*) /$1;
 spec:
   rules:
-  - http:
-      paths:
-      - path: /dashboard(/|$)(.*)
-        backend:
-          serviceName: kubernetes-dashboard
-          servicePort: 80
+    - host: example.app.org
+      http:
+       paths:
+        # - path: /dashboard
+        - path: /dashboard(/|$)(.*)
+        # - path: /dashboard/(.*)
+          backend:
+            serviceName: kubernetes-dashboard
+            servicePort: 8443
+
+
+# ---
+# apiVersion: extensions/v1beta1
+# kind: Ingress
+# metadata:
+#   name: kubernetes-dashboard
+#   namespace: kubernetes-dashboard
+#   annotations:
+#     # kubernetes.io/ingress.class: nginx
+#     # nginx.org/ssl-services: kubernetes-dashboard
+#     nginx.ingress.kubernetes.io/ssl-passthrough: "true"
+#     # nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+#     # nginx.ingress.kubernetes.io/rewrite-target: /$2
+
+#     # nginx.ingress.kubernetes.io/secure-backends: "true"
+#     # nginx.ingress.kubernetes.io/add-base-url: "true"
+#     # nginx.ingress.kubernetes.io/ssl-redirect: "false"
+#     # nginx.ingress.kubernetes.io/configuration-snippet: rewrite ^(/dashboard)$ $1/ permanent;
+# spec:
+#   rules:
+#     - host: example.app.org
+#       http:
+#        paths:
+#         - path: /dashboard
+#         # - path: /dashboard(/|$)(.*)
+#           backend:
+#             serviceName: kubernetes-dashboard
+#             servicePort: 8443
+
+
+
+# apiVersion: networking.k8s.io/v1beta1
+# kind: Ingress
+# metadata:
+#   name: dashboard-ing
+#   namespace: kube-system
+#   annotations:
+#     nginx.ingress.kubernetes.io/rewrite-target: /$2
+# spec:
+#   rules:
+#   - http:
+#       paths:
+#       - path: /dashboard(/|$)(.*)
+#         backend:
+#           serviceName: kubernetes-dashboard
+#           servicePort: 80
 
 
 
