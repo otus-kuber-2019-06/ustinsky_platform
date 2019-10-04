@@ -1,18 +1,21 @@
 # ustinsky_platform
 ustinsky Platform repository
 
-Домашняя работа 1 (kuber-intro)
+### Домашняя работа 1 kuber-intro
+```
+## 1. Установка kubectl
+- 1.1 Скачиваем
+curl -LO https://storage.googleapis.com/kubernetes-release/release/`curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt`/bin/linux/amd64/kubectl
+    
+- 1.2 Даем права
+chmod +x ./kubectl
 
-1. Установка kubectl
-    1.1 Скачиаем
-        curl -LO https://storage.googleapis.com/kubernetes-release/release/`curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt`/bin/linux/amd64/kubectl
-    1.2 Даем права
-        chmod +x ./kubectl
-    1.3 Переносим в /usr/local/bin
-        sudo mv ./kubectl /usr/local/bin/kubectl
-    1.4 Настраиваем автодополнение
-        source <(kubectl completion bash) # setup autocomplete in bash into the current shell, bash-completion package should be installed first.
-        echo "source <(kubectl completion bash)" >> ~/.bash_profile
+- 1.3 Переносим в /usr/local/bin
+sudo mv ./kubectl /usr/local/bin/kubectl
+
+- 1.4 Настраиваем автодополнение
+source <(kubectl completion bash) # setup autocomplete in bash into the current shell, bash-completion package should be installed first.
+echo "source <(kubectl completion bash)" >> ~/.bash_profile
 
 2.  Установка minikube
     2.1 Проверяем наличие поддержки аппаратной виртуализации
@@ -253,7 +256,9 @@ ustinsky Platform repository
 25. Добавить файлы
     1. .travis.yml
     2. .github/PULL_REQUEST_TEMPLATE.md
-    
+```
+
+
 Домашняя работа 2 (kuber-security)
 1. task01
     1.1 Создать Service Account bob, дать ему роль admin в рамках всего кластера
