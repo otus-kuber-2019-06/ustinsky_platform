@@ -259,7 +259,8 @@ echo "source <(kubectl completion bash)" >> ~/.bash_profile
 ```
 
 
-Домашняя работа 2 (kuber-security)
+### Домашняя работа 2 (kuber-security)
+```
 1. task01
     1.1 Создать Service Account bob, дать ему роль admin в рамках всего кластера
         1) nano 01-sa-bob.yaml
@@ -387,10 +388,10 @@ echo "source <(kubectl completion bash)" >> ~/.bash_profile
             kind: ClusterRole
             name: view
             apiGroup: rbac.authorization.k8s.io
+```
 
-
-Домашняя работа 3 (kuber-network)
-    
+### Домашняя работа 3 (kuber-network)
+``` 
     1. Работа с тестовым веб-приложением
         1.1. Добавление проверок Pod
             1.1.1 Добавить в описание пода
@@ -693,8 +694,10 @@ echo "source <(kubectl completion bash)" >> ~/.bash_profile
             kubectl apply -f web-ingress.yaml
             kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.0.0-beta1/aio/deploy/recommended.yaml
             kubectl create -f https://raw.githubusercontent.com/kubernetes/dashboard/master/src/deploy/recommended/kubernetes-dashboard.yaml
+```
 
-Домашняя работа 4 (kuber-database)
+### Домашняя работа 4 (kuber-database)
+```
     1. kind
         1.1 Установка 
             https://kind.sigs.k8s.io/docs/user/quick-start#installation
@@ -720,7 +723,7 @@ echo "source <(kubectl completion bash)" >> ~/.bash_profile
         2.2 Используя minio/mc
             https://github.com/minio/mc
 
-        
+ ```       
 
 
 
