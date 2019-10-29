@@ -8,7 +8,7 @@ spec:
       image: ubuntu
       command: ["/bin/bash", "-ec", "while :; do sleep 2; done"]
       volumeMounts:
-        - mountPath: /test
+        - mountPath: /data
           name: test-volume
   volumes:
     - name: test-volume
