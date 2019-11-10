@@ -5,34 +5,38 @@ ustinsky Platform repository
 
 1. Установка kubectl
     1.1 Скачиаем
-~~~~
+    ~~~~
         curl -LO https://storage.googleapis.com/kubernetes-release/release/`curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt`/bin/linux/amd64/kubectl
-~~~~
+    ~~~~
     1.2 Даем права
-~~~~
+    ~~~~
         chmod +x ./kubectl
-~~~~
+    ~~~~
     1.3 Переносим в /usr/local/bin
-~~~~
+    ~~~~
         sudo mv ./kubectl /usr/local/bin/kubectl
-~~~~  
+    ~~~~  
     1.4 Настраиваем автодополнение
-~~~~
+    ~~~~
         source <(kubectl completion bash) # setup autocomplete in bash into the current shell, bash-completion package should be installed first.
         echo "source <(kubectl completion bash)" >> ~/.bash_profile
-~~~~
+    ~~~~
     
 2.  Установка minikube
     2.1 Проверяем наличие поддержки аппаратной виртуализации
+    ~~~~
         grep -E --color 'vmx|svm' /proc/cpuinfo
+    ~~~~
     2.2 Устанавливаем VirtualBox
 
     2.3 Скачиваем minikube
+    ~~~~
         curl -Lo minikube https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64 && chmod +x minikube
-
+    ~~~~
     2.4 Устанавливаем minikube
+    ~~~~
         sudo install minikube /usr/local/bin
-
+    ~~~~
 3. Установка kind (https://kind.sigs.k8s.io/)
     1. Ставим
         GO111MODULE="on" go get sigs.k8s.io/kind@v0.5.1 && kind create cluster
