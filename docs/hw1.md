@@ -3,12 +3,12 @@ ustinsky Platform repository
 
 Домашняя работа 1 (kuber-intro)
 
-1. Установка kubectl <br>
-    1.1 Скачиаем
+1.    Установка kubectl <br>
+    1.1   Скачиаем
     ~~~~
         curl -LO https://storage.googleapis.com/kubernetes-release/release/`curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt`/bin/linux/amd64/kubectl
     ~~~~
-    1.2 Даем права
+    1.2   Даем права
     ~~~~
         chmod +x ./kubectl
     ~~~~
