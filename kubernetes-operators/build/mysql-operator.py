@@ -133,3 +133,6 @@ def delete_object_make_backup(body, **kwargs):
     api.create_namespaced_job('default', backup_job)
     wait_until_job_end(f"backup-{name}-job")
     return {'message': "mysql and its children resources deleted"}
+
+
+
