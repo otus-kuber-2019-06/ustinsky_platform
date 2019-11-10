@@ -5,17 +5,23 @@ ustinsky Platform repository
 
 1. Установка kubectl
     1.1 Скачиаем
-        ~~~~~
+~~~~
         curl -LO https://storage.googleapis.com/kubernetes-release/release/`curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt`/bin/linux/amd64/kubectl
-        ~~~~~
+~~~~
     1.2 Даем права
+~~~~
         chmod +x ./kubectl
+~~~~
     1.3 Переносим в /usr/local/bin
+~~~~
         sudo mv ./kubectl /usr/local/bin/kubectl
+~~~~  
     1.4 Настраиваем автодополнение
+~~~~
         source <(kubectl completion bash) # setup autocomplete in bash into the current shell, bash-completion package should be installed first.
         echo "source <(kubectl completion bash)" >> ~/.bash_profile
-
+~~~~
+    
 2.  Установка minikube
     2.1 Проверяем наличие поддержки аппаратной виртуализации
         grep -E --color 'vmx|svm' /proc/cpuinfo
