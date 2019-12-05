@@ -1,0 +1,9 @@
+dependencies:
+- name: frontend
+  repository: file://../frontend
+  version: 0.1.0
+- name: mongodb
+  repository: file://../mongodb
+  version: 0.1.0
+digest: sha256:20253f7d18d3de221a5aa5302d0d59f09e8e9d0632092759db14766819d17c80
+generated: "2019-12-01T19:47:08.85655748+03:00"
