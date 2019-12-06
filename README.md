@@ -1,2 +1,9 @@
-# ustinsky_platform
-ustinsky Platform repository
+- [hw1 intro](docs/hw1.md)
+- [hw2 security](docs/hw2.md)
+- [hw3 network](docs/hw3.md)
+- [hw4 volumes](docs/hw4.md)
+- [hw5 storage](docs/hw5.md)
+- [hw6 debug](docs/hw6.md)
+- [hw7 operator](docs/hw7.md)
+- [hw10 operator](docs/hw10.md)
+- [hw11 operator](docs/hw11.md)
